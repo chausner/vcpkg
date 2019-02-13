@@ -1,0 +1,32 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index f35210f..6f89730 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -58,6 +58,13 @@ if (BUILD_SHARED)
+       endif ()
+     endif ()
+   endif()
++  
++  install (
++    TARGETS lsl
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++  )
+ 
+ endif (BUILD_SHARED)
+ 
+@@ -80,6 +87,13 @@ if (BUILD_STATIC)
+       endif ()
+     endif ()
+   endif()
++  
++  install (
++    TARGETS lsl-static
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++  )
+ 
+ endif (BUILD_STATIC)
+ 
